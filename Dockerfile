@@ -14,6 +14,9 @@ RUN \
   tar xvzf elasticsearch-1.3.1.tar.gz && \
   rm -f elasticsearch-1.3.1.tar.gz && \
   mv /tmp/elasticsearch-1.3.1 /elasticsearch
+  
+# Install ICU plugin
+RUN cd /elasticsearch && bin/plugin -install elasticsearch/elasticsearch-analysis-icu/2.3.0
 
 # Define mountable directories.
 VOLUME ["/data"]
